@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai1_BMI</title>
+</head>
+<body>
+    Mark: <br>
+    <input id="massMark" value="5" type="text"> <br>
+    <input id="heightMark" type="text"> <br>
+    John: <br>
+    <input id="massJohn" type="text"> <br>
+    <input id="heightJohn" type="text"> <br>
+<button id="btnCal">Click</button>
+
+</body>
+<script>
+    var massMark = document.getElementById('massMark').value;
+    var massJohn = document.getElementById('massJohn');
+    var heightMark = document.getElementById('heightJohn');
+    var heightJohn = document.getElementById('heightJohn');
+    var btnCal = document.getElementById('btnCal');
+    btnCal.onclick = () => {
+        var MarkBMI = massMark.value / (heightMark.value * heightMark.value);
+        var JohnBMI = massJohn.value / (heightJohn.value * heightJohn.value);
+
+        var MarkHigherBMI = MarkBMI > JohnBMI;
+
+        console.log(MarkHigherBMI);
+    }
+</script>
+</html>
