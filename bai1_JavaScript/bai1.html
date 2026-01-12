@@ -7,7 +7,7 @@
 </head>
 <body>
     Mark: <br>
-    <input id="massMark" type="text"> <br>
+    <input id="massMark" value="5" type="text"> <br>
     <input id="heightMark" type="text"> <br>
     John: <br>
     <input id="massJohn" type="text"> <br>
@@ -16,7 +16,7 @@
 
 </body>
 <script>
-    var massMark = document.getElementById('massMark');
+    var massMark = document.getElementById('massMark').value;
     var massJohn = document.getElementById('massJohn');
     var heightMark = document.getElementById('heightJohn');
     var heightJohn = document.getElementById('heightJohn');
@@ -25,13 +25,9 @@
         var MarkBMI = massMark.value / (heightMark.value * heightMark.value);
         var JohnBMI = massJohn.value / (heightJohn.value * heightJohn.value);
 
-        if(MarkBMI > JohnBMI){
-            console.log("Mark béo hơn John");
-        } else if(MarkBMI < JohnBMI){
-            console.log("John béo hơn Mark");
-        } else {
-            console.log("Mark và John có chỉ số BMI bằng nhau");
-        }
+        var MarkHigherBMI = MarkBMI > JohnBMI;
+
+        console.log(MarkHigherBMI);
     }
 </script>
 </html>
