@@ -17,10 +17,8 @@
         function calcTip(a){
             return a >= 50 && a <= 300 ? a * 0.15 : a * 0.20;
         }
-        function tinhTip (bill) {
-            return calcTip(bill)
-        }
-        const tips = bills.map(tinhTip)
+ 
+        const tips = bills.map(calcTip)
         
         console.log("tips: ", tips);
         
