@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+        var tips = [];
+        var totals = [];
+
+        function calcTip(a){
+            return a >= 50 && a <= 300 ? a * 0.15 : a * 0.20;
+        }
+
+
+        tips = bills.map(calcTip);
+        totals = bills.map((bill, index) => bill + tips[index]);
+
+        console.log("Bills:", bills);
+        console.log("Tips:", tips);
+        console.log("Totals:", totals);
+
+        const calcAverage = function (arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]; 
+            }
+            return sum / arr.length;
+        };
+
+
+        const averageTotal = calcAverage(totals);
+        console.log(`Trung bình tổng hóa đơn là: ${averageTotal}`);
+
+
+
+
+
+    </script>
+</body>
+</html>
