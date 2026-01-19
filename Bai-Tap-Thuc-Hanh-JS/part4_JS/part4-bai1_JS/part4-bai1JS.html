@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <button class="btn again">Again!</button>
+        <div class="number">?</div>
+        </header>
+        <main>
+        <section class="left">
+            <input type="number" class="guess" />
+            <button class="btn check">Check!</button>
+        </section>
+        <section class="right">
+            <p class="message">Start guessing...</p>
+            <p class="label-score">Score: <span class="score">20</span></p>
+        </section>
+        </main>
+
+    <script>
+        // Khai báo các biến ban đầu 
+        let score = 20;
+        let secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+        // 1. Chọn phần tử có class 'again' và gắn sự kiện click
+        document.querySelector('.again').addEventListener('click', function () {
+            console.log(document.getElementsByClassName('guess').value);
+            
+        
+            // 2. Khôi phục giá trị ban đầu cho các biến logic
+            score = 20;
+            secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+            // 3. Khôi phục các điều kiện ban đầu của giao diện (UI)
+            // Khôi phục thông báo, điểm số và ô hiển thị số bí mật
+            document.querySelector('.message').textContent = 'Start guessing...';
+            document.querySelector('.score').textContent = score;
+            document.querySelector('.number').textContent = '?';
+            
+            // Khôi phục ô nhập liệu (xóa trống giá trị cũ)
+            document.querySelector('.guess').value = '';
+
+            // 4. Khôi phục định dạng CSS ban đầu
+            // Đổi lại màu nền thành #222
+            document.querySelector('body').style.backgroundColor = '#222';
+            
+            // Đổi lại độ rộng của ô chứa số thành 15rem
+            document.querySelector('.number').style.width = '15rem';
+        });
+
+    </script>
+</body>
+</html>
