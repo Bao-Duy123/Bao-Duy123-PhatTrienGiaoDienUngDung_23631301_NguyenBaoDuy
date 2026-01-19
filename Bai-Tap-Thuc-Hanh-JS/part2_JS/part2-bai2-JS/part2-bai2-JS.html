@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part2-bai1-JS</title>
+</head>
+<body>
+    bill: <input id="bill" type="text">
+    <button id="btnCal">click</button>
+
+    <script>
+
+        var bills = [125, 55, 44];
+        console.log("bills: ", bills);
+        
+        function calcTip(a){
+            return a >= 50 && a <= 300 ? a * 0.15 : a * 0.20;
+        }
+        function tinhTip (bill) {
+            return calcTip(bill)
+        }
+        const tips = bills.map(tinhTip)
+        
+        console.log("tips: ", tips);
+        
+        const taoArrTotal = (bill, index)=>{
+                    return bill+tips[index];
+                }
+        const total = bills.map(taoArrTotal);
+            
+
+                
+        console.log( "totals: ", total);
+        
+    </script>
+</body>
+</html>
