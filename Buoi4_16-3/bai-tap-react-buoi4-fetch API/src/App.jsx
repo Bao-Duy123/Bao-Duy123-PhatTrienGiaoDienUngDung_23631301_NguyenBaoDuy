@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Bai1 from './component/Bai1';
 import Bai2 from './component/Bai2';
 import Bai3 from './component/Bai3';
+import Bai4 from './component/Bai4';
 
 // import Bai2 from './Bai2_Axios'; 
 
@@ -18,6 +19,8 @@ function App() {
         return <Bai2/>;
         case 'bai3':
         return <Bai3/>;
+        case 'bai4':
+        return <Bai4/>;
       default:
         return <h3>Vui lòng chọn một bài tập để hiển thị</h3>;
     }
