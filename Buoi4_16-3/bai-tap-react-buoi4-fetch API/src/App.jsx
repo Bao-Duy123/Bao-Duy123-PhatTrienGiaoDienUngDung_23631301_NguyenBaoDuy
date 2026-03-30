@@ -4,8 +4,6 @@ import Bai2 from './component/Bai2';
 import Bai3 from './component/Bai3';
 import Bai4 from './component/Bai4';
 
-// import Bai2 from './Bai2_Axios'; 
-
 function App() {
   // 1. Khởi tạo state để biết đang ở bài nào (mặc định là 'home' hoặc 'bai1')
   const [currentTab, setCurrentTab] = useState('home');
