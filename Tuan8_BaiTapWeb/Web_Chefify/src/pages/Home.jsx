@@ -2,15 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import Header from '../component/Header';
 import LoginButton from '../component/LoginButton';
 import DiscoverPopup from '../component/DiscoverPopup';
-import LoginModal from '../component/LoginModal';
-import SignupModal from '../component/SignupModal';
 import Footer from '../component/Footer';
 import { chefifyImages, introSlides } from '../data/chefifyAssets';
 
 const Home = () => {
   const [showDiscoverPopup, setShowDiscoverPopup] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [showSignupModal, setShowSignupModal] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -61,7 +57,7 @@ const Home = () => {
             </div>
 
             <div className="absolute right-6 top-6 z-20 md:hidden">
-              <LoginButton variant="solid" size="sm" onClick={() => setShowLoginModal(true)}>
+              <LoginButton variant="solid" size="sm">
                 Login
               </LoginButton>
             </div>
@@ -79,9 +75,6 @@ const Home = () => {
         onNext={handleNextSlide}
         onClose={closeDiscoverPopup}
       />
-
-      {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
-      {showSignupModal && <SignupModal onClose={() => setShowSignupModal(false)} />}
     </section>
   );
 };

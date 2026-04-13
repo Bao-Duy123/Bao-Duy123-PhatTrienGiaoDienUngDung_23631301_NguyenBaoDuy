@@ -76,21 +76,21 @@ const LoginModal = ({ onClose }) => {
           <div className="space-y-3">
             <button
               type="button"
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-red-200 bg-rose-50 py-3 text-sm font-semibold text-red-500 transition hover:bg-rose-100"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-rose-50 py-3 text-sm font-semibold text-red-500 transition hover:bg-rose-100"
             >
               <span className="text-lg">G</span>
               Continue with Google
             </button>
             <button
               type="button"
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-blue-200 bg-blue-50 py-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-100"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-50 py-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-100"
             >
               <span className="text-lg">f</span>
               Continue with Facebook
             </button>
             <button
               type="button"
-              className="flex w-full items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-zinc-50 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-zinc-100 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200"
             >
               <span className="text-lg">🍎</span>
               Continue with Apple
