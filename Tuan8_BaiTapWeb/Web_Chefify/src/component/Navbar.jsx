@@ -1,8 +1,18 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import { chefifyImages } from '../data/chefifyAssets';
 
 const Navbar = ({ onLoginClick, onSubscribeClick }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+    }
+  };
   return (
     <header className="relative z-20 bg-white/95 backdrop-blur-sm">
       <nav className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-4 py-4 lg:px-6">
@@ -11,14 +21,16 @@ const Navbar = ({ onLoginClick, onSubscribeClick }) => {
         </Link>
 
         <div className="hidden flex-1 px-3 md:block lg:px-6">
-          <div className="flex h-11 w-full items-center rounded-lg border border-zinc-200 bg-zinc-50 px-3 text-zinc-500">
+          <form onSubmit={handleSearch} className="flex h-11 w-full items-center rounded-lg border border-zinc-200 bg-zinc-50 px-3 text-zinc-500">
             <span className="mr-2 text-sm">🔎</span>
             <input
               type="text"
               placeholder="What would you like to cook?"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full bg-transparent text-sm text-zinc-700 outline-none placeholder:text-zinc-400"
             />
-          </div>
+          </form>
         </div>
 
         <div className="hidden items-center gap-5 text-sm text-zinc-600 lg:flex">

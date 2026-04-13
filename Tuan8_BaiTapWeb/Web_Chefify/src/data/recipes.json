@@ -1,0 +1,59 @@
+{
+    "recipes": [{
+            "id": 1,
+            "name": "Italian-style tomato salad",
+            "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop",
+            "time": 15,
+            "difficulty": "Easy"
+        },
+        {
+            "id": 2,
+            "name": "Vegetable and shrimp spaghetti",
+            "image": "https://images.unsplash.com/photo-1612874742237-6526221fcf4e?w=400&h=300&fit=crop",
+            "time": 30,
+            "difficulty": "Medium"
+        },
+        {
+            "id": 3,
+            "name": "Lotus delight salad",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
+            "time": 20,
+            "difficulty": "Easy"
+        },
+        {
+            "id": 4,
+            "name": "Snack cakes",
+            "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
+            "time": 45,
+            "difficulty": "Hard"
+        },
+        {
+            "id": 5,
+            "name": "Salad with cabbage and shrimp",
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
+            "time": 25,
+            "difficulty": "Medium"
+        },
+        {
+            "id": 6,
+            "name": "Bean, shrimp, and potato salad",
+            "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop",
+            "time": 35,
+            "difficulty": "Medium"
+        },
+        {
+            "id": 7,
+            "name": "Sunny-side up fried eggs",
+            "image": "https://images.unsplash.com/photo-1585238341710-4edd9a20be25?w=400&h=300&fit=crop",
+            "time": 10,
+            "difficulty": "Easy"
+        },
+        {
+            "id": 8,
+            "name": "Lotus delight salad",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
+            "time": 20,
+            "difficulty": "Easy"
+        }
+    ]
+}
