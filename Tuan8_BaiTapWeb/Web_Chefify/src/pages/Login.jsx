@@ -1,9 +1,30 @@
 import { useNavigate } from 'react-router-dom';
 import LoginButton from '../component/LoginButton';
 import { chefifyImages } from '../data/chefifyAssets';
+import { useState } from 'react';
+import { loginByEmail } from '../services/authService';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState('');
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  setError('');
+  setLoading(true);
+  try {
+    const user = await loginByEmail(email);
+    sessionStorage.setItem('chefify-user', JSON.stringify(user)); // persistent simple
+    setLoading(false);
+    navigate('/dashboard');
+  } catch (err) {
+    setError(err.message || 'Đăng nhập thất bại');
+    setLoading(false);
+  }
+};
+
 
   return (
     <section className="relative min-h-screen bg-zinc-100 px-4 py-6 sm:px-8">
@@ -37,22 +58,27 @@ const Login = () => {
             <h1 className="text-5xl font-black text-zinc-900">Login</h1>
             <p className="mt-4 text-zinc-600">Enter your email to log in.</p>
 
-            <form className="mt-5 space-y-4" onSubmit={(event) => event.preventDefault()}>
-              <input
-                type="email"
-                required
-                placeholder="Enter your email"
-                className="w-full rounded-lg bg-zinc-100 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-pink-300"
-              />
-              <LoginButton
-                type="submit"
-                label="Continue"
-                size="lg"
-                bgColor="#ec4899"
-                textColor="#ffffff"
-                className="w-full rounded-lg py-3"
-              />
-            </form>
+            <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+  <input
+    type="email"
+    required
+    placeholder="Enter your email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    className="w-full rounded-lg bg-zinc-100 px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-pink-300"
+  />
+  {error && <div className="text-sm text-red-500">{error}</div>}
+  <LoginButton
+    type="submit"
+    label={loading ? 'Please wait…' : 'Continue'}
+    size="lg"
+    bgColor="#ec4899"
+    textColor="#ffffff"
+    className="w-full rounded-lg py-3"
+    disabled={loading}
+    onChange={(e) => setEmail(e.target.value)}
+  />
+</form>
 
             <div className="my-5 flex items-center gap-3 text-xs text-zinc-400">
               <div className="h-px flex-1 bg-zinc-200" />

@@ -53,11 +53,11 @@ const Navbar = ({ onLoginClick, onSubscribeClick }) => {
           >
             Subscribe
           </button>
-          <img
+          {/* <img
             src={chefifyImages.userAvatar}
             alt="User avatar"
             className="hidden h-9 w-9 rounded-full object-cover md:block"
-          />
+          /> */}
         </div>
       </nav>
     </header>
